@@ -1,0 +1,9 @@
+<select class="selectpicker form-control" id="valg_periode_dropdown">
+    <option data-datotype="periode" data-id-start="{{dateFormatForID dateStart}}"
+            data-id-slut="{{dateFormatForID dateEnd}}"><strong>Denne Uge |</strong> {{dateFormat dateStart}} til {{dateFormat dateEnd}}</option>
+    <option data-datotype="periode" data-id-start="{{dateFormatForID dateStartNextWeek}}"
+            data-id-slut="{{dateFormatForID dateEndNextWeek}}">Næste Uge | {{dateFormat dateStartNextWeek}} til {{dateFormat dateEndNextWeek}}</option>
+    <option data-datotype="dato" data-id="{{dateFormatForID dateToday}}">I Dag | {{dateFormat dateToday}}</option>
+    <option data-datotype="dato" data-id="{{dateFormatForID dateTomorrow}}">I Morgen | {{dateFormat dateTomorrow}}</option>
+    <option id="vælg_periode_manuelt">Vælg periode manuelt</option>
+</select>

@@ -1,0 +1,3 @@
+ {{#each bestillingslinje}}
+        <p data-id="{{this.vare.id}}">{{this.vare.navn}}  <i id="button_slet_vare_bestilling" class="fa fa-trash fa-lg slet_vare_bestilling pull-right"></i><br>{{this.antal}} stk. - {{prisTotal this.antal this.pris}} kr.</p>
+ {{/each}}

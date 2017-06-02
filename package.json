@@ -1,0 +1,35 @@
+{
+  "name": "slagterapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --ui tdd test",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://marinaalens@bitbucket.org/slagterapp/slagter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/slagterapp/slagter#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bootstrap-select": "^1.12.2",
+    "chai": "^3.5.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "md5": "^2.2.1",
+    "mocha": "^3.3.0",
+    "mongoose": "^4.9.5",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
+  }
+}

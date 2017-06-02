@@ -1,0 +1,68 @@
+<div class="container" id="bestillingsoversigt">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel bestillingsoversigt-panel">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <div id="periodevalg">
+                            </div>
+                        </div>
+                        <div class="col-sm-offset-1 col-sm-4">
+                            <div class="input-group søg-bestilling-felt">
+                                <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+                                <input class="form-control" placeholder="Søg efter navn" type="text" id="søg_bestilling">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pre-scrollable">
+                                <div class="panel-group" id="accordion">
+                                    <div id="bestillings_oversigt_indhold">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="rediger_bestillingsinfo_modal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header panel-heading-dark">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Redigér Bestillingsinformation</h3>
+                </div>
+                <div class="modal-body" id="rediger_bestillingsinfo">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annullér</button>
+                    <button id="button_gem_rediger_bestilling" type="button" class="btn btn-dark">Gem</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="rediger_bestillingslinjer_modal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header panel-heading-dark">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Redigér Vare</h3>
+                </div>
+                <div class="modal-body" id="rediger_bestillingslinjer">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

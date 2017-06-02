@@ -1,0 +1,127 @@
+<div class="container" id="administration">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel rediger-vare-panel">
+                <div class="panel-heading panel-heading-dark">
+                    <h3 class="panel-title">Vare <button class="btn btn-sm btn-success" id="opret_vare">
+                                            <span class="fa fa-plus" aria-hidden="true">
+                                            </span></button></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="kategoriDropdown">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+                                <input class="form-control" placeholder="Søg" type="text" id="søg_vare_felt">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="vare_container">
+                            <div class="pre-scrollable">
+                                <div class="list-group" id="vare_oversigt">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="btn-group btn-group-lg rediger-slet-buttons">
+                            <button class="btn btn-md btn-info" id="rediger_vare">
+                                            <span class="fa fa-pencil" aria-hidden="true">
+                                            </span></button>
+                            <button class="btn btn-md btn-danger" id="slet_vare">
+                                            <span class="fa fa-trash" aria-hidden="true">
+                                            </span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel rediger-varekategori-panel">
+                <div class="panel-heading panel-heading-dark">
+                    <h3 class="panel-title">Varekategori <button class="btn btn-sm btn-success" id="opret_varekategori">
+                                            <span class="fa fa-plus" aria-hidden="true">
+                                            </span></button></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12" id="kategori_container">
+                            <div class="pre-scrollable">
+                                <div class="list-group" id="kategori_oversigt">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="btn-group btn-group-lg rediger-slet-buttons">
+                                        <button class="btn btn-md btn-info" id="rediger_varekategori">
+                                            <span class="fa fa-pencil" aria-hidden="true">
+                                            </span></button>
+                                        <button class="btn btn-md btn-danger" id="slet_varekategori">
+                                            <span class="fa fa-trash" aria-hidden="true">
+                                            </span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel rediger-medarbejder-panel">
+                <div class="panel-heading panel-heading-dark">
+                    <h3 class="panel-title">Medarbejder <button class="btn btn-sm btn-success" id="opret_medarbejder">
+                                            <span class="fa fa-plus" aria-hidden="true">
+                                            </span></button></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12" id="medarbejder_container">
+                            <div class="pre-scrollable">
+                                <div class="list-group" id="medarbejder_oversigt">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="btn-group btn-group-lg rediger-slet-buttons">
+                                        <button class="btn btn-md btn-info" id="rediger_medarbejder">
+                                            <span class="fa fa-pencil" aria-hidden="true">
+                                            </span></button>
+                                        <button class="btn btn-md btn-danger" id="slet_medarbejder">
+                                            <span class="fa fa-trash" aria-hidden="true">
+                                            </span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade" id="rediger_opret_modal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header panel-heading-dark">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="modalTitel"></h3>
+                </div>
+                <div class="modal-body" id="modalIndhold">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annullér</button>
+                    <button type="button" class="btn btn-dark" id="gem">Gem</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

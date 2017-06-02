@@ -1,0 +1,303 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Open Sans','Verdana', sans-serif;
+    background: url("../background_slagter.jpg");
+}
+
+h4 {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+nav {
+    margin-bottom: 5%;
+}
+
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:focus, .nav-tabs.nav-justified>.active>a:hover{
+    border: none;
+}
+
+.nav-tabs li:active{
+    opacity: 0.7;
+}
+
+.nav-tabs li a {
+    background-color: white;
+    color: #292929;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.nav-tabs li.active a, .nav-tabs li.active a:focus{
+    color: white;
+    font-weight: bold;
+    border: transparent;
+    background-color: #554341;
+}
+
+#vare_oversigt, #kategori_oversigt, #medarbejder_oversigt {
+    min-height: 450px;
+    margin-top: 5%;
+    width: 100%;
+}
+
+#kategori_oversigt, #medarbejder_oversigt {
+    margin-top: 16%;
+}
+
+#kategori_container, #medarbejder_container {
+    min-height: 550px;
+}
+
+.pre-scrollable {
+    max-height: 450px;
+}
+
+#vare_oversigt .list-group-item, #kategori_oversigt .list-group-item, #medarbejder_oversigt .list-group-item{
+    font-size: 1.1em;
+}
+
+.list-group-item:hover {
+    cursor: pointer;
+}
+
+.list-group-item:active {
+    color: #d9edf7;
+}
+
+#bestilling_oversigt-liste {
+    max-height: 50px;
+}
+
+#bestilling_oversigt-liste .list-group-item {
+    max-height: 40px;
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+.panel-heading-dark {
+    background-color: #554341;
+
+}
+
+.panel-heading-dark h3 {
+    color: white;
+    font-weight: bold;
+}
+
+.panel-heading-dark a {
+    color: white;
+    font-weight: bold;
+}
+
+#rediger_bestillingsinfo_modal h3, #rediger_bestillingslinjer_modal h3 {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.detaljer-overskrift-vare {
+    color: black;
+}
+
+#bestillingsvare h4 {
+    color: black;
+}
+
+.bestillingslinje-panel, .ny-bestilling-panel, .rediger-vare-panel, .rediger-medarbejder-panel, .rediger-varekategori-panel {
+    border: #292929;
+}
+
+.bestillingslinje-panel {
+    margin-top: 20px;
+}
+
+#bestillings_oversigt_heading {
+    text-align: left;
+}
+
+#tilføj_vare span {
+    margin-right: 10%;
+}
+
+#tilføj_vare {
+    margin-top: 5%;
+    width: 70%;
+}
+#opret_bestilling {
+    margin-top: 5%;
+    width: 70%;
+}
+#opret_bestilling span {
+    margin-right: 10%;
+}
+
+.dropdown-menu {
+    font-size: 1.1em;
+}
+
+.panel-body {
+    text-align: center;
+    align-content: center;
+}
+
+.ny-bestilling-panel, .rediger-vare-panel, .rediger-varekategori-panel, .rediger-medarbejder-panel {
+    min-height: 600px;
+}
+
+#antal-vare, #bestillingsvare, #kommentar-vare, .pris-vare, #kommentar-vare, .input-group.rabat-vare,
+#bestilling_oversigt-liste, #kommentar-bestilling, #medarbejder_ID, .samlet-pris, #emballage-lån {
+    margin-bottom: 15px;
+}
+
+#input-antal-vare, #pris_vare {
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+    word-wrap: break-word;
+}
+
+#kunde_info .input-group {
+    margin-bottom: 3%;
+}
+
+#afhentningsdato {
+    margin-bottom: 5%;
+}
+
+input[type="checkbox"] {
+    zoom: 1.7;
+}
+
+.buttons-bestillingslinje button {
+    min-width: 100px;
+}
+
+.vare-table, .table-kunde-information {
+    margin-left: 5%;
+    width: auto;
+}
+
+.logUd {
+    margin-bottom: 2%;
+}
+
+#bestillings_oversigt_indhold {
+    min-height: 500px;
+}
+
+.slet_vare_bestilling {
+    margin-top: 4%;
+    color: darkred;
+}
+
+#bestillings_liste {
+    text-align: left;
+}
+
+#periodevalg {
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.søg-bestilling-felt {
+    text-align: right;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+#periodevalg a:hover {
+    background-color: #d9edf7;
+}
+
+#periodevalg a:focus {
+    outline: none;
+}
+
+#periodevalg span:focus {
+    outline: none;
+}
+
+#periodevalg button:focus, #periodevalg button:active, #periodevalg button:hover, #periodevalg button:visited {
+}
+
+.vare-table .bestil-true td {
+    color: royalblue;
+    font-weight: bold;
+}
+
+.buttons-bestillingslinje a {
+    cursor: pointer;
+}
+
+.buttons-bestillingslinje li {
+    cursor: pointer;
+}
+
+.bestillingsoversigt-panel  {
+    border: transparent;
+    background: transparent;
+}
+
+.btn-dark {
+    background-color: #554341;
+    color: white;
+}
+
+.btn-dark:hover, .btn-dark:active, .btn-dark:focus {
+    background-color: #080808;
+    color: white;
+}
+
+.btn-light {
+    background-color: white;
+    color: #080808;
+}
+
+.btn-light:hover, .btn-light:active, .btn-light:focus {
+    background-color: whitesmoke;
+    color: #080808;
+}
+
+.status-button {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 80%;
+    margin-bottom: 10px;
+}
+
+.status-button:first-child {
+    margin-top: 10px;
+}
+
+.status-button:focus, .status-button:active {
+    outline: none;
+}
+
+.rediger-slet-buttons {
+    margin-top: 20px;
+}
+
+.ugeDag {
+    color: white;
+    font-weight: bold;
+}
+
+mark {
+    background-color: yellow;
+}
+
+.row.table-bestillinger-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bestillingslinje-panel span.label {
+    font-size: 0.8em;
+}

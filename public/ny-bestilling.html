@@ -1,0 +1,186 @@
+<div class="container" id="ny-bestilling">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel ny-bestilling-panel">
+                        <div class="panel-heading panel-heading-dark">
+                            <h3 class="panel-title">Vælg vare</h3>
+                        </div>
+                        <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div id="kategoriDropdown">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+                                            <input class="form-control" placeholder="Søg" type="text" id="søg_vare_felt">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" id="vare_container">
+                                        <div class="pre-scrollable">
+                                            <div class="list-group" id="vare_oversigt">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-md-4">
+                <div class="panel ny-bestilling-panel">
+                    <div class="panel-heading panel-heading-dark">
+                        <h3 class="panel-title">Detaljer om varen</h3>
+                    </div>
+                    <div class="panel-body">
+                            <h4 class="detaljer-overskrift-vare" id="antal-enhed-overskrift">Antal</h4>
+                            <div class="row">
+                                <div class="col-sm-offset-3 col-sm-6">
+                                    <div class="input-group" id="antal-vare">
+                                        <span class="input-group-btn">
+                                          <button type="button" class="btn btn-danger" id="btn-number-minus"  data-type="minus">
+                                            <span class="fa fa-minus"></span>
+                                          </button>
+                                        </span>
+                                        <input id="input-antal-vare" type="text" class="form-control" value="1" min="0.1" max="999">
+                                        <span class="input-group-btn">
+                                          <button type="button" class="btn btn-success" id="btn-number-plus" data-type="plus">
+                                              <span class="fa fa-plus"></span>
+                                          </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="detaljer-overskrift-vare" id="pris-enhed-overskrift">Pris</h4>
+                            <div class="row">
+                                <div class="col-sm-offset-3 col-sm-6">
+                                    <div class="input-group pris-vare">
+                                        <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+                                        <input id="pris_vare" class="form-control" type="number">
+                                    </div>
+                                    <div id="pris_vare_samlet"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h4 class="detaljer-overskrift-vare">Rabat</h4>
+                                <div class="col-sm-offset-3 col-sm-6">
+                                    <div class="input-group rabat-vare">
+                                        <input id="rabat-vare" class="form-control" type="number">
+                                        <span class="input-group-btn">
+                                            <button id="procent-rabat" class="btn btn-warning"><span class="fa fa-percent"></span></button>
+                                            <button id="kr-rabat" class="btn btn-info">kr.</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="detaljer-overskrift-vare">Kommentar</h4>
+                            <div class="row">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <textarea class="form-control" placeholder="Tilføj kommentar" id="kommentar-vare"></textarea>
+                                </div>
+                            </div>
+                            <div id="bestillingsvare">
+                                <h4>
+                                    Bestillingsvare <input type="checkbox" title="bestillingsvare-checkbox" id="bestillingsvare-checkbox">
+                                </h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-offset-1 col-sm-10">
+                                    <button class="btn btn-lg btn-success" id="tilføj_vare">
+                                        <span class="fa fa-cart-plus fa-lg" aria-hidden="true">
+                                        </span>Tilføj</button>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-md-4">
+                    <div class="panel ny-bestilling-panel">
+                        <div class="panel-heading panel-heading-dark">
+                            <h3 class="panel-title">Detaljer om bestillingen</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="detaljer_bestilling">
+                                <div id="kunde_info">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" placeholder="Navn" id="kunde_navn">
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" placeholder="Adresse" id="kunde_adresse">
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i></span>
+                                        <input type="number" class="form-control" placeholder="Telefon nr." id="kunde_tlf">
+                                    </div>
+                                </div>
+                                <div class='input-group' id="afhentningsdato">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar fa-lg fa-fw"></i>
+                                        </span>
+                                    <input id='vælg_bestillings_dato' type='datetime-local' class="form-control"/>
+                                </div>
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="bestillings_liste_heading">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                    Bestilling
+                                                    <i class="fa fa-caret-down pull-right"></i></a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                <div id="bestillings_liste">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-offset-2 col-sm-8">
+                                        <div class="input-group samlet-pris">
+                                            <span class="input-group-addon"><i class="fa fa-credit-card fa-lg" aria-hidden="true"></i></span>
+                                            <input value="0" id="samlet_pris" type="number" class="form-control" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-offset-2 col-sm-8">
+                                        <textarea placeholder="Tilføj kommentar" class="form-control" id="kommentar-bestilling"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-offset-2 col-sm-8">
+                                        <div id="emballage-lån">
+                                            <h4>
+                                                Emballage udlånt <input type="checkbox" title="emballage-checkbox" id="emballage-checkbox">
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-offset-4 col-sm-4">
+                                        <div id="medarbejder_ID">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-offset-1 col-sm-10">
+                                        <button class="btn btn-lg btn-success" id="opret_bestilling">
+                                            <span class="fa fa-check fa-lg" aria-hidden="true">
+                                            </span>Opret</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+

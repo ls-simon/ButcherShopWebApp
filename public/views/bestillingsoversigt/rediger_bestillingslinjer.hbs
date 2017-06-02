@@ -1,0 +1,30 @@
+{{#each bestillingLinjer}}
+    <div class="row">
+        <div class="col-md-8">
+            <div data-id="{{this._id}}">
+                <p><strong>Vare: </strong>{{checkVare this.vare "navn"}}</p>
+                <p><strong>Antal: </strong>{{this.antal}}</p>
+                <p><strong>Pris: </strong>{{this.pris}}</p>
+                <p><strong>Bestillingsvare: </strong>{{bestillingsVare this.bestillingsvare}}</p>
+                <p><strong>Kommentar: </strong>{{this.kommentar}}</p>
+                <p><strong>Samlet: </strong>{{prisTotal this.antal this.pris}} kr.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="btn-group btn-group-lg">
+                <button class="btn btn-lg btn-info" id="rediger_vare" data-id="{{this._id}}"><span class="fa fa-pencil" aria-hidden="true">
+                                            </span>
+                </button>
+                <button class="btn btn-lg btn-danger" id="slet_vare" data-id="{{this._id}}"><span class="fa fa-trash" aria-hidden="true">
+                                            </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr/>
+{{/each}}
+<div class="row">
+    <div class="col-md-offset-5 col-md-2">
+        <button class="btn btn-lg btn-success" id="ny_vare"><span class="fa fa-plus" aria-hidden="true"></span></button>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-12">
+        <div id="kunde_info" data-id="{{this._id}}">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" placeholder="Navn" id="rediger_kunde_navn"
+                       value="{{this.kundeNavn}}" name="kundeNavn">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" placeholder="Adresse" id="rediger_kunde_adresse" value="{{this.kundeAdresse}}" name="kundeAdresse">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i></span>
+                <input type="number" class="form-control" placeholder="Telefon nr." id="rediger_kunde_tlf" value="{{this.kundeTlf}}" name="kundeTlf">
+            </div>
+        </div>
+        <div class="form-group">
+            <h4>Afhentningsdato</h4>
+            <div class='input-group'>
+                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                <input id="rediger_afhentning_dato" type='datetime-local' class="form-control" value="{{dateTimeFormatDatePicker this.afhentningsDato}}" name="afhentningsDato"/>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <textarea placeholder="Tilføj kommentar" class="form-control" id="rediger-kommentar-bestilling" name="kommentar">{{this.kommentar}}</textarea>
+        </div>
+    </div>
+</div>
+

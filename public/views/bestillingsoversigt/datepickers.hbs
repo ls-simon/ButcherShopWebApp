@@ -1,0 +1,15 @@
+<div class="form-group">
+    <div class="col-sm-10">
+        <div class='input-group'>
+            <span class="input-group-addon">Fra </span>
+            <input data-id="{{dateFormatForID startDato}}" id='bestilling_periode_startdato' type='date' class="form-control" value="{{startDato}}" min="{{startDato}}"/>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"> Til </span>
+            <input data-id="{{dateFormatForID slutDato}}" id='bestilling_periode_slutdato' type='date' class="form-control" value="{{slutDato}}" min="{{startDato}}"/>
+        </div>
+    </div>
+</div>
+<div class="col-sm-2">
+    <button id="tilbage_vælg_periode_dropdown" class="btn btn-light"><i class="fa fa-undo"></i> Denne uge</button>
+</div>

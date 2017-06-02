@@ -1,0 +1,145 @@
+{{#each bestilling}}
+
+    <div class="panel bestillingslinje-panel">
+        <div class="panel-heading panel-heading-light" id="bestillings_oversigt_heading">
+            <div class="row">
+                <div class="col-sm-3">
+                    <span class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#{{this._id}}">{{this.kundeNavn}}
+                    - {{timeFormat this.afhentningsDato}}
+                    <i class="fa fa-caret-down fa-lg fa-fw"></i>
+                </a></span>
+                </div>
+                <div class="col-sm-4">
+                    <span id="bestillingsvareBadge-{{this._id}}" class="label label-danger">{{bestillingsvarerBadge this.bestillingLinjer}}</span>
+                    <span id="pakketBadge-{{this._id}}" class="label label-primary">{{udregnProcentPakket this.bestillingLinjer}}
+                        pakket</span>
+                </div>
+                <div class="col-sm-1">
+                    <select class="selectpicker form-control" id="valg_status_dropdown" data-width="fit" data-bestilling="{{this._id}}" data-style="btn-primary">
+                        <option {{checkStatus this.status "Bestilt"}}>Bestilt</option>
+                        <option {{checkStatus this.status "Køl 1"}}>Køl 1</option>
+                        <option {{checkStatus this.status "Køl 2"}}>Køl 2</option>
+                        <option {{checkStatus this.status "Køl 3"}}>Køl 3</option>
+                        <option {{checkStatus this.status "Afhentet"}}>Afhentet</option>
+                    </select>
+                </div>
+                <div class="col-sm-offset-1 col-sm-3">
+                    <div class="btn-group btn-group-lg">
+                        <button id="button_rediger_bestillingslinjer" data-id="{{this._id}}" data-toggle="modal"
+                                data-target="#rediger_bestillingslinjer_modal" class="btn btn-dark"><span class="fa fa-cutlery"></span>
+                        </button>
+                        <button id="button_rediger_bestillinginfo" data-id="{{this._id}}" data-toggle="modal"
+                                data-target="#rediger_bestillingsinfo_modal" class="btn btn-dark"><span class="fa fa-user"></span>
+                        </button>
+                        <button data-id="{{this._id}}" id="bestilling_udskriv" class="btn btn-dark"><span class="fa fa-print"></span>
+                        </button>
+                        <button id="button_slet_bestilling" data-id="{{this._id}}" class="btn btn-danger"><span class="fa fa-trash"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="{{this._id}}" class="panel-collapse collapse">
+            <div class="row table-bestillinger-row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <table class="table table-responsive text-left vare-table" data-id="{{this._id}}">
+                                <thead>
+                                <tr>
+                                    <th class="text-nowrap">Vare</th>
+                                    <th class="text-nowrap">Antal</th>
+                                    <th class="text-nowrap">Pris per stk.</th>
+                                    <th class="text-nowrap">Bestillingsvare</th>
+                                    <th class="text-nowrap">Kommentar</th>
+                                    <th class="text-nowrap">Samlet pris</th>
+                                    <th class="text-nowrap">Vare bestilt</th>
+                                    <th class="text-nowrap">Vare pakket</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#each bestillingLinjer}}
+                                    <tr class="{{bestillingsvareHighlight this.bestillingsvare this.bestilt}}" data-id="{{this._id}}">
+                                        <td>{{checkVare this.vare "navn"}}</td>
+                                        <td>{{this.antal}} {{checkVare this.vare "enhed"}}</td>
+                                        <td>{{this.pris}} kr.</td>
+                                        <td>{{bestillingsVare this.bestillingsvare}}</td>
+                                        <td><strong>
+                                            {{{highlightKommentar this.kommentar}}}
+                                        </strong></td>
+                                        <td class="text-nowrap">{{prisTotal this.antal this.pris}} kr.</td>
+                                        <td class="text-center">{{{bestillingsVareCheckbox this.bestillingsvare
+                                                                                           this.bestilt}}}</td>
+                                        <td class="text-center">{{{varePakketCheckbox this.pakket}}}</td>
+                                    </tr>
+                                {{/each}}
+                                <tr>
+                                    <td><strong>Total:</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><strong>{{samletPris bestillingLinjer}} kr.</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <table class="table table-responsive table-kunde-information text-left">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-nowrap"><span class="fa fa-user"></span> Navn</th>
+                                        <th class="text-nowrap"><span class="fa fa-map-marker"></span> Adresse</th>
+                                        <th class="text-nowrap"><span class="fa fa-phone"></span> Tlf.</th>
+                                        <th class="text-nowrap"><span class="fa fa-calendar"></span> Bestillingsdato
+                                        </th>
+                                        <th class="text-nowrap"><span class="fa fa-calendar"></span> Afhentningsdato
+                                        </th>
+                                        <th class="text-nowrap"><span class="fa fa-pencil"></span> Kommentar</th>
+                                        <th class="text-nowrap"><span class="fa fa-user"></span> Oprettet af</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{this.kundeNavn}}</td>
+                                        <td>{{this.kundeAdresse}}</td>
+                                        <td>{{this.kundeTlf}}</td>
+                                        <td>{{smallDateTimeFormat this.bestillingsDato}}</td>
+                                        <td>{{smallDateTimeFormat this.afhentningsDato}}</td>
+                                        <td><strong>
+                                            {{{highlightKommentar this.kommentar}}}
+                                        </strong></td>
+                                        <td>{{this.medarbejder.navn}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <table class="table table-responsive table-kunde-information text-left">
+                                    <thead>
+                                    <tr>
+                                        <th><span class="fa fa-cutlery"></span> Emballage udlånt</th>
+                                        <th><span class="fa fa-undo"></span> Emballage afleveret</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{emballageLabel this.emballage}}</td>
+                                        <td class="text-center">{{{emballageCheckbox this.emballage}}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/each}}
